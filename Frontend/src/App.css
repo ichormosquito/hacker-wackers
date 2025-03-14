@@ -253,7 +253,7 @@
   .post-input {
     background-color: var(--dark-green);
     height: 4vh;
-    width: 48vw;
+    width: 47vw;
     border-radius: 100px;
     border: solid 1px var(--input-border);
     padding-left: 10px;
@@ -265,10 +265,37 @@
 
   .post-submit-button {
     background-color: var(--dark-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5vw;
+    flex-direction: row;
     height: 4vh;
-    width: 5vw;
+    width: 6vw;
     border-radius: 10px;
     border: solid 1px var(--input-border);
+  }
+
+}
+
+.reg-form {
+  padding-bottom: 2vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+
+  .reg-input {
+    border-radius: 100px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding-left: 10px;
+    width: 13vw;
+    height: 3.5vh;
+  }
+
+  .reg-input::placeholder {
+    color: black;
   }
 
 }

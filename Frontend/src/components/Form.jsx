@@ -9,18 +9,12 @@ import Button from "./Button.jsx";
 import Register from "../assets/register.png"
 import Login from "../assets/login.png"
 import Logout from "../assets/logout.png"
-import Form from "../components/Form.jsx"
 
-export default function DMList() {
+export default function Form() {
     return(
-        <div className="menu">
-            Login / Register
-            <hr></hr>
-            <Form />
-            <Button icon={Register} title="Register" href="/register" />
-            <Button icon={Login} title="Login" href="/login"/>
-            {/* <Button icon={Logout} title="Logout" href="/logout" /> */}
-            <hr></hr>
-        </div>
+        <form className="reg-form">
+            <input className="reg-input" placeholder="username"></input>
+            <input className="reg-input" placeholder="password"></input>
+        </form>
     )
 }

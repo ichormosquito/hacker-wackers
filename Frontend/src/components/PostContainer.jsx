@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Icon from "../assets/Icon.png"
 import Search from "../assets/search.png"
+import Send from "../assets/send.png"
 import Hamburger from "../assets/hamburger.png"
 import SearchBar from "./Search.jsx"
 import Profile from "./Profile.jsx"
@@ -21,7 +22,8 @@ export default function PostContainer() {
 
                     </input>
                     <div className="post-submit-button">
-                        
+                        <img src={Send} style={{height: "40%"}}></img>
+                        <div style={{fontSize: "10pt", color: "white"}}>Send</div>
                     </div>
                 </div>
             </div>
