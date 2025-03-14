@@ -17,15 +17,15 @@ export default function PostContainer() {
                 <div className="posts">
                     <Post />
                 </div>
-                <div className="post-form">
+                <form className="post-form">
                     <input className="post-input" placeholder="Type here to make a post...">
 
                     </input>
-                    <div className="post-submit-button">
-                        <img src={Send} style={{height: "40%"}}></img>
+                    <button className="post-submit-button">
+                        <img src={Send} style={{height: "100%"}}></img>
                         <div style={{fontSize: "10pt", color: "white"}}>Send</div>
-                    </div>
-                </div>
+                    </button>
+                </form>
             </div>
         </div>
     )
