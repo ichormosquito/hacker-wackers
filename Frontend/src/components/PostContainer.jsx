@@ -7,7 +7,7 @@ import Hamburger from "../assets/hamburger.png"
 import SearchBar from "./Search.jsx"
 import Profile from "./Profile.jsx"
 import Button from "./Button.jsx";
-import Post from "./Post"
+import Post from "./Post.jsx"
 
 
 export default function PostContainer() {

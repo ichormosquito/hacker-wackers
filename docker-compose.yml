@@ -20,6 +20,13 @@ services:
     environment:
       - MONGO_URI=mongodb://mongo:27017/hacker_wackers
       - JWT_SECRET=your_jwt_secret
+  
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:5173"
+    
 
 volumes:
   mongo_data:

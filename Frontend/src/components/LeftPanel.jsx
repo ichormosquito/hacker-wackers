@@ -5,7 +5,7 @@ import Search from "../assets/search.png"
 import Hamburger from "../assets/hamburger.png"
 import SearchBar from "./Search.jsx"
 import Profile from "./Profile.jsx"
-import MenuPanel from "./MenuPanel"
+import MenuPanel from "./MenuPanel.jsx"
 
 export default function LeftPanel() {
     return(

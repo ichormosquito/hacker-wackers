@@ -9,7 +9,7 @@ import Button from "./Button.jsx";
 import Register from "../assets/register.png"
 import Login from "../assets/login.png"
 import Logout from "../assets/logout.png"
-import Form from "../components/Form.jsx"
+import Form from "./Form.jsx"
 
 export default function DMList() {
     return(

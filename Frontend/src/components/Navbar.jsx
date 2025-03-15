@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import Icon from "../assets/Icon.png"
 import Search from "../assets/search.png"
 import Hamburger from "../assets/hamburger.png"
-import SearchBar from "../components/Search.jsx"
-import Profile from "../components/Profile.jsx"
+import SearchBar from "./Search.jsx"
+import Profile from "./Profile.jsx"
 
 export default function Navbar() {
     return(
