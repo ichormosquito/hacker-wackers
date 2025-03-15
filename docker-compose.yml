@@ -17,9 +17,13 @@ services:
       - "8080:8080"
     depends_on:
       - mongo
+    working_dir: /backend
     environment:
       - MONGO_URI=mongodb://mongo:27017/hacker_wackers
       - JWT_SECRET=your_jwt_secret
+      - PORT=8080
+    command: ["npm", "start"]
+    
 
 volumes:
   mongo_data:
