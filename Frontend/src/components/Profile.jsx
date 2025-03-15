@@ -5,19 +5,27 @@ import Search from "../assets/search.png"
 import Hamburger from "../assets/hamburger.png"
 
 export default function Profile() {
+    const token = sessionStorage.getItem('token') === null ? null : sessionStorage.getItem('token')
+    
+    
     return(
-        <div className="profile">
-            <div className="circle">
+        <div>
+            { token === null ? <div></div> : 
+            ( 
+            <div className="profile">
+                <div className="circle">
 
-            </div>
-            <div>
-                <div className="username">
-                    username
                 </div>
-                <div className="rolename">
-                    role name
+                <div>
+                    <div className="username">
+                        username
+                    </div>
+                    <div className="rolename">
+                        role name
+                    </div>
                 </div>
             </div>
+            )}
         </div>
     )
 }
