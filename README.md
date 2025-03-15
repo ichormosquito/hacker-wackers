@@ -13,9 +13,13 @@ However, sensible security measures remain. All passwords are salted and hashed,
 
 INSTRUCTIONS:
 
-To run the app, clone the repo, navigate to Frontend, and execute in your terminal:
-"npm install”
-"npm run build”
-"npm run dev”
+To run the app, clone the repo, navigate to the repo's root directory, and execute in your terminal:
+
+"docker compose build”
+"docker compose up”
+
+The site should be live at [http://localhost:5173](http://localhost:5173/)
+
+Once you create an account and login, you can make posts.
 
 GITHUB: https://github.com/ichormosquito/hacker-wackers
