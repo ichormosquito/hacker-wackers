@@ -3,9 +3,7 @@
 
 Chosen project: WebDenial
 
-Team: Chris Dearing, Tina Costanza, Gurleen Rekhi
-
-# Set up a web server, develop DoS/DDoS exploitations against the app, followed by a practical defense enhancement.
+Team members: Chris Dearing, Tina Costanza, Gurleen Rekhi
 
 In general, our WebDenial security project closely follows our goals from our initial report. It’s a streamlined, Mongo database-driven web app capable of generating posts and login authentication.
 
@@ -23,9 +21,3 @@ To run the app, clone the repo, navigate to Frontend, and execute in your termin
 GITHUB: https://github.com/ichormosquito/hacker-wackers
 
 DEPLOYMENT: https://hacker-wackers-hlm5slp5d-ichormosquitos-projects.vercel.app/
-
-Team members:
-
-Chris Dearing
-Tina Costanza
-Gurleen Rekhi
