@@ -19,5 +19,3 @@ To run the app, clone the repo, navigate to Frontend, and execute in your termin
 "npm run dev”
 
 GITHUB: https://github.com/ichormosquito/hacker-wackers
-
-DEPLOYMENT: https://hacker-wackers-hlm5slp5d-ichormosquitos-projects.vercel.app/
