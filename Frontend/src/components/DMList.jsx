@@ -20,7 +20,13 @@ export default function DMList() {
             { token === null ? "Login / Register" : "" }
             <hr></hr>
             <Form />
-            { token === null ? "" : <Button icon={Logout} title="Logout" href="/logout" /> }
+            { token === null ? "" : 
+            (<button className="button" onClick={() => { sessionStorage.removeItem('token'); window.location.reload() }}>
+                <div style={{marginLeft: "20%"}}>
+                    <img src={Logout}></img>
+                </div>
+                Logout
+            </button>) }
             <hr></hr>
         </div>
     )
