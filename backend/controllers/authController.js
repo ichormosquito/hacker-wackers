@@ -9,7 +9,8 @@ export const register = async (req, res) => {
     const { username, email, password } = req.body;
 
     try {
-        const user = await User.create({ username, email, password });
+        const id = Math.floor(1000000 + Math.random() * 9000000);
+        const user = await User.create({ username, email, password, id });
         const token = generateToken(user._id);
         const addToken = await User.updateOne({ email } , { token: token })
         res.status(201).json({ token: token });
@@ -46,11 +47,11 @@ export const resetPassword = async (req, res) => {
     res.json({ message: 'Password reset successfully' });
 };
 
-export const getUsername = async (req, res) => {
+export const getUserInfo = async (req, res) => {
     const { token } = req.body;
     try {
         const user = await User.findOne({ token: token });
-        if (user) return res.status(200).json({ message: 'User is logged in.', user: user.username })
+        if (user) return res.status(200).json({ message: 'User is logged in.', user: user.username, id: user.id })
     } catch(error) {
         res.status(500).json({ message: 'Invalid token.' })
     }

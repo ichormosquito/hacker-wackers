@@ -35,6 +35,7 @@ export default function Form() {
         const response = await axios.post(`${URL}/auth/register`, {email: email, username: username, password: password})
         .then((response) => {
             console.log(response)
+            sessionStorage.removeItem('token')
             sessionStorage.setItem('token', response.data.token)
         })
         .catch((err) => { console.log(err) })
@@ -46,6 +47,7 @@ export default function Form() {
             const response = await axios.post(`${URL}/auth/login`, {email: email, password: password})
         .then((response) => {
             console.log(response)
+            sessionStorage.removeItem('token')
             sessionStorage.setItem('token', response.data.token)
         })
         .catch((err) => { console.log(err) })
