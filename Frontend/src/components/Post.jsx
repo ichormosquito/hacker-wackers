@@ -19,9 +19,9 @@ export default function Post(props) {
 
                 </div>
                 <div className="post-div">
-                    <div className="post-title">
+                    {/* <div className="post-title">
                         {title}
-                    </div>
+                    </div> */}
                     <div className="post-text">
                         {text}
                     </div>

@@ -12,14 +12,15 @@ import Logout from "../assets/logout.png"
 import Form from "./Form.jsx"
 
 export default function DMList() {
+
+    const token = sessionStorage.getItem('token') === null ? null : sessionStorage.getItem('token')
+
     return(
         <div className="menu">
-            Login / Register
+            { token === null ? "Login / Register" : "" }
             <hr></hr>
             <Form />
-            <Button icon={Register} title="Register" href="/register" />
-            <Button icon={Login} title="Login" href="/login"/>
-            {/* <Button icon={Logout} title="Logout" href="/logout" /> */}
+            { token === null ? "" : <Button icon={Logout} title="Logout" href="/logout" /> }
             <hr></hr>
         </div>
     )

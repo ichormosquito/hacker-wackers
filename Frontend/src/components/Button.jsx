@@ -11,6 +11,10 @@ export default function Button(props) {
     const title = props.title
     const href = props.href
 
+    const email = props.email
+    const username = props.username
+    const password = props.password
+
     return(
         <div className="button">
             <div style={{marginLeft: "20%"}}>

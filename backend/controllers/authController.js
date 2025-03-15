@@ -41,3 +41,9 @@ export const resetPassword = async (req, res) => {
     await user.save();
     res.json({ message: 'Password reset successfully' });
 };
+
+export const returnAllUsers = async (req, res) => {
+    const users = await User.find({});
+    if (!users) return res.status(404).json({ message: 'No users registered' })
+    res.json({ message: 'Users found', users });
+}
