@@ -9,8 +9,9 @@ import Button from "./Button.jsx";
 import PostButton from "./PostButton.jsx";
 
 export default function Post(props) {
-    const title = "Post Title";
-    const text = "Post text goes here"
+    // const title = "Post Title";
+    const username = props.username
+    const content = props.content
 
     return(
         <div className="post">
@@ -19,11 +20,11 @@ export default function Post(props) {
 
                 </div>
                 <div className="post-div">
-                    {/* <div className="post-title">
-                        {title}
-                    </div> */}
+                    <div className="post-title">
+                        {username}
+                    </div>
                     <div className="post-text">
-                        {text}
+                        {content}
                     </div>
                     <div className="post-buttons">
                         <PostButton type = "like" />

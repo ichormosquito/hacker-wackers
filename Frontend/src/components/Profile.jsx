@@ -11,7 +11,7 @@ export default function Profile() {
     const [username, setUsername] = useState();
     
     const getUsername = async () => {
-        const response = await axios.get(`${URL}/auth/info`, {token: token})
+        const response = await axios.get(`${URL}/auth/info/${token}`)
         .then((response) => {
             console.log(response)
             setUsername(response.data.user)

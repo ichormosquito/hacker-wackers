@@ -6,7 +6,11 @@ export const getPosts = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-    const post = await Post.create({ user: req.user.id, content: req.body.content });
+    const { id, content, username } = req.body
+    console.log(id)
+    console.log(content)
+    console.log(username)
+    const post = await Post.create({ id: id, username: username, content: content });
     res.json({ message: 'Post created', post });
 };
 

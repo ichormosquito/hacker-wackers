@@ -48,10 +48,20 @@ export const resetPassword = async (req, res) => {
 };
 
 export const getUserInfo = async (req, res) => {
-    const { token } = req.body;
+    const { token } = req.params;
     try {
-        const user = await User.findOne({ token: token });
+        const user = await User.findOne({ token });
         if (user) return res.status(200).json({ message: 'User is logged in.', user: user.username, id: user.id })
+    } catch(error) {
+        res.status(500).json({ message: 'Invalid token.' })
+    }
+}
+
+export const getUsernameFromID = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const user = await User.findOne({ id });
+        if (user) return res.status(200).json({ message: 'ID has been found.', user: user.username })
     } catch(error) {
         res.status(500).json({ message: 'Invalid token.' })
     }
