@@ -23,7 +23,12 @@ services:
       - JWT_SECRET=your_jwt_secret
       - PORT=8080
     command: ["npm", "start"]
-    
+  
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "5173:5173"
 
 volumes:
   mongo_data:
