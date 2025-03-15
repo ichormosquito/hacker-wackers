@@ -18,7 +18,6 @@ export default function MenuPanel() {
         <div className="menu">
             Menu
             <hr></hr>
-            <Button icon={Posts} title="Posts" href="/posts" />
             <Button icon={Settings} title="Settings" href="/settings" />
             <hr></hr>
         </div>
