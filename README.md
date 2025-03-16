@@ -13,6 +13,10 @@ However, sensible security measures remain. All passwords are salted and hashed,
 
 INSTRUCTIONS:
 
+The site uses three Docker containers, so first install Docker Desktop from here:
+
+[https://www.docker.com/get-started/](https://www.docker.com/get-started/)
+
 To run the app, clone the repo, navigate to the repo's root directory, and execute in your terminal:
 
 "docker compose build”
