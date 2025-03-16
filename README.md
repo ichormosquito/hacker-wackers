@@ -21,5 +21,6 @@ To run the app, clone the repo, navigate to the repo's root directory, and execu
 The site should be live at [http://localhost:5173](http://localhost:5173/)
 
 Once you create an account and login, you can make posts.
+You can also reset your password, as well as login with a pre-existing account.
 
 GITHUB: https://github.com/ichormosquito/hacker-wackers
