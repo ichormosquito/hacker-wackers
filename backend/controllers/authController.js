@@ -70,7 +70,8 @@ export const resetPassword = async (req, res) => {
             return res.status(401).json({ message: 'Old password is incorrect' });
         }
 
-        user.password = await bcrypt.hash(newPassword, 10);
+        // user.password = await bcrypt.hash(newPassword, 10);
+        user.password = newPassword;
         await user.save();
 
         res.json({ message: 'Password reset successfully' });
