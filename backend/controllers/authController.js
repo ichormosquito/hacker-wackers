@@ -1,5 +1,6 @@
 import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '1h' });
@@ -9,22 +10,26 @@ export const register = async (req, res) => {
     const { username, email, password } = req.body;
 
     if (!username || !email || !password) {
+        console.log('missing')
         return res.status(400).json({ message: 'Missing required fields' });
     }
 
     try {
         const existingUser = await User.findOne({ email });
         if (existingUser) {
+            console.log('exists')
             return res.status(400).json({ message: 'User already exists' });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
         const id = Math.floor(1000000 + Math.random() * 9000000);
-        const user = await User.create({ username, email, hashedPassword, id });
+        const user = await User.create({ username, email, password: hashedPassword, id });
         const token = generateToken(user._id);
         const addToken = await User.updateOne({ email } , { token: token })
         res.status(201).json({ token: token });
     } catch (error) {
+        console.log(error)
+        console.log('failed')
         res.status(400).json({ message: 'Registration failed' });
     }
 };

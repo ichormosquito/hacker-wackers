@@ -12,14 +12,36 @@ import Settings from "../assets/settings.png"
 import SearchBar from "./Search.jsx"
 import Profile from "./Profile.jsx"
 import Button from "./Button.jsx";
+import SettingsPanel from "./SettingsPanel.jsx"
 
 export default function MenuPanel() {
+
+    const token = sessionStorage.getItem('token') === null ? null : sessionStorage.getItem('token')
+    const [settings, setSettings] = useState(false);
+
+    const showSettings = (e) => {
+        setSettings(e);
+    }
+
     return(
         <div className="menu">
             Menu
             <hr></hr>
-            <Button icon={Settings} title="Settings" href="/settings" />
-            <hr></hr>
+            <button className="button" style={{width: "80%"}} onClick={() => { { !settings ? showSettings(true) : showSettings(false) } }}>
+                <div style={{marginLeft: "20%"}}>
+                    <img src={Settings}></img>
+                </div>
+                Settings
+            </button>
+            { settings ?
+            <div>
+                { !token ? "Please log in to access the settings." : <SettingsPanel />}
+            </div>
+            :
+            <div>
+                
+            </div>
+            }
         </div>
     )
 }

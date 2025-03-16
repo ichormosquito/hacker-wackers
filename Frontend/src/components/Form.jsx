@@ -10,6 +10,7 @@ import Button from "./Button.jsx";
 import Register from "../assets/register.png"
 import Login from "../assets/login.png"
 import Logout from "../assets/logout.png"
+import { escapeHtml } from "../constants/functions.js";
 
 import { URL } from "../constants/url.js";
 
@@ -32,7 +33,8 @@ export default function Form() {
 
     const handleRegister = async (event) => {
         event.preventDefault();
-        const response = await axios.post(`${URL}/auth/register`, {email: email, username: username, password: password})
+        console.log(password)
+        const response = await axios.post(`${URL}/auth/register`, {email: escapeHtml(email), username: escapeHtml(username), password: escapeHtml(password)})
         .then((response) => {
             console.log(response)
             sessionStorage.setItem('token', response.data.token)
@@ -43,7 +45,7 @@ export default function Form() {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-            const response = await axios.post(`${URL}/auth/login`, {email: email, password: password})
+            const response = await axios.post(`${URL}/auth/login`, {email: escapeHtml(email), password: escapeHtml(password)})
         .then((response) => {
             console.log(response)
             sessionStorage.setItem('token', response.data.token)

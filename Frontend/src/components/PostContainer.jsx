@@ -10,6 +10,7 @@ import Profile from "./Profile.jsx"
 import Button from "./Button.jsx";
 import Post from "./Post.jsx"
 import { URL } from "../constants/url.js";
+import { escapeHtml } from "../constants/functions.js";
 
 
 export default function PostContainer() {
@@ -37,7 +38,7 @@ export default function PostContainer() {
     }
 
     const createPost =  async () => {
-        const response = axios.post(`${URL}/posts/create`, {content: content, username: username, id: user_id})
+        const response = axios.post(`${URL}/posts/create`, {content: escapeHtml(content), username: username ? username : "Guest", id: user_id ? user_id : 0})
         .then((response) => {
             console.log(response)
         })
