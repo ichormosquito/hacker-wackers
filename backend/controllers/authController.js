@@ -39,7 +39,7 @@ export const login = async (req, res) => {
 
     try {
         const user = await User.findOne({ email });
-        if (user && (await user.matchPassword(password))) {
+        if (user && bcrypt.compare(password, user.password)) {
             const token = generateToken(user._id);
             const username = await User.updateOne({ email } , { token: token })
             res.status(200).json({ token: token });
