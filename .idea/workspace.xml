@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc68ffca-24b0-402d-a7c3-3f706f12e109" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,8 @@
       <option name="presentableId" value="Default" />
       <updated>1742091793218</updated>
       <workItem from="1742091794339" duration="3233000" />
-      <workItem from="1742095256204" duration="389000" />
+      <workItem from="1742095256204" duration="1526000" />
+      <workItem from="1742947180858" duration="130000" />
     </task>
     <servers />
   </component>
