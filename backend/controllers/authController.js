@@ -32,9 +32,10 @@ export const register = async (req, res) => {
             return res.status(400).json({ message: 'User already exists' });
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+        // const hashedPassword = await bcrypt.hash(password, 10);
         const id = Math.floor(1000000 + Math.random() * 9000000);
-        const user = await User.create({ username, email, password: hashedPassword, id });
+
+        const user = await User.create({ username, email, password: password, id });
         const token = generateToken(user._id);
         const addToken = await User.updateOne({ email } , { token: token })
         res.status(201).json({ token: token });
@@ -85,7 +86,8 @@ export const resetPassword = async (req, res) => {
             return res.status(401).json({ message: 'Old password is incorrect' });
         }
 
-        user.password = await bcrypt.hash(newPassword, 10);
+        // user.password = await bcrypt.hash(newPassword, 10);
+        user.password = newPassword;
         await user.save();
 
         res.json({ message: 'Password reset successfully' });

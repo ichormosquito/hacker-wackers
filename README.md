@@ -13,6 +13,10 @@ However, sensible security measures remain. All passwords are salted and hashed,
 
 INSTRUCTIONS:
 
+The site uses three Docker containers, so first install Docker Desktop from here:
+
+[https://www.docker.com/get-started/](https://www.docker.com/get-started/)
+
 To run the app, clone the repo, navigate to the repo's root directory, and execute in your terminal:
 
 "docker compose build”
@@ -21,5 +25,6 @@ To run the app, clone the repo, navigate to the repo's root directory, and execu
 The site should be live at [http://localhost:5173](http://localhost:5173/)
 
 Once you create an account and login, you can make posts.
+You can also reset your password, as well as login with a pre-existing account.
 
 GITHUB: https://github.com/ichormosquito/hacker-wackers
