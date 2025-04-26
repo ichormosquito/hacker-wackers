@@ -11,6 +11,10 @@ During development, we scaled back certain features, such as email notification 
 
 However, sensible security measures remain. All passwords are salted and hashed, and all text input is sanitized to prevent code injection. As it is a NoSQL database, Mongo is resilient in the face of typical SQL attacks.
 
+NEWLY ADDED IN RESPONSE TO KEY GUARDIAN ATTACK:
+- Rate limiting
+- Enforced password complexity
+
 INSTRUCTIONS:
 
 The site uses three Docker containers, so first install Docker Desktop from here:
