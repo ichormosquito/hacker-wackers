@@ -2,7 +2,7 @@ import socket, time, random
 
 
 # Configuration
-REQUESTS = 5000  # Total number of requests to send
+REQUESTS =100  # Total number of requests to send
 TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWNkYTZmNGY5NmFmYWQ5YjdkMzAxZCIsImlhdCI6MTc0MzU3NTY2MywiZXhwIjoxNzQzNTc5MjYzfQ.6D03Cjg52Sw0frV1mPReLP6dePQyqenOZBEuXTBtlLw"
 
 
