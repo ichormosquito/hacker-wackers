@@ -6,12 +6,23 @@ const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 };
 
+const isStrongPassword = (password) => {
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+    return passwordRegex.test(password);
+  };  
+
 export const register = async (req, res) => {
     const { username, email, password } = req.body;
 
     if (!username || !email || !password) {
         console.log('missing')
         return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    if (!isStrongPassword(password)) {
+        return res.status(400).json({
+            message: 'Password must be at least 8 characters long, include a capital letter, a number, and a special character.'
+        });
     }
 
     try {
@@ -28,8 +39,7 @@ export const register = async (req, res) => {
         const addToken = await User.updateOne({ email } , { token: token })
         res.status(201).json({ token: token });
     } catch (error) {
-        console.log(error)
-        console.log('failed')
+        console.log('failed: ', error)
         res.status(400).json({ message: 'Registration failed' });
     }
 };
@@ -57,6 +67,12 @@ export const resetPassword = async (req, res) => {
 
     if (!email || !oldPassword || !newPassword) {
         return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    if (!isStrongPassword(newPassword)) {
+        return res.status(400).json({
+            message: 'New password must be at least 8 characters long, include a capital letter, a number, and a special character.'
+        });
     }
 
     try {
